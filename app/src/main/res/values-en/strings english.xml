@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MovieKatalog2</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="add_favorite"> Tambah Favorit</string>
+    <string name="delete_fav">Delete Favorite</string>
+    <string name="tab_text_1">Movies</string>
+    <string name="tab_text_2">Tv Shows</string>
+    <string name="tab_text_3">Favorit</string>
+    <string name="This_is_tab">This is Tab</string>
+    <string name="name_movie">Movie Tittle</string>
+    <string name="desc" translatable="false">Movie Description</string>
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="_8">8</string>
+    <string name="judul">Tittle</string>
+    <string name="txt_Rilis">Date Release</string>
+    <string name="txt_rating">Rating</string>
+    <string name="txt_sinposis">Synopsis</string>
+    <string name="change_language_settings">Change Language Setting</string>
+    <string name="time_out">Connection time out</string>
+    <string name="no_connection">You are not connected to the network</string>
+
+</resources>
