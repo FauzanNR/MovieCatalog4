@@ -19,6 +19,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final int DATABASE_VERSION = 1;
 
+
     private static String CREATE_TABLE_MOVIE = "create table " + TABLE_NAME +
             " (" + _ID + " integer primary key, " +
             TITLE + " text not null, " +

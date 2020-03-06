@@ -4,6 +4,10 @@
     package="com.example.moviecatalog4">
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <permission android:name="com.example.moviecatalog4.READ_DB"
+        android:protectionLevel="normal"/>
+    <permission android:name="com.example.moviecatalog4.WRITE_DB"
+        android:protectionLevel="normal"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -25,6 +29,27 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <service
+            android:name=".stackwidget.StackWidgetService"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="android.permission.BIND_REMOTEVIEWS" />
+
+        <receiver android:name=".stackwidget.FavoriteWidgetProvider">
+            <intent-filter>
+                <action android:name= "android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_info" />
+        </receiver>
+        <provider
+            android:authorities="com.example.moviecatalog4"
+            android:name=".database.contentProvider"
+            android:enabled="true"
+            android:exported="true"
+            android:readPermission="com.example.moviecatalog4.READ_DB"
+            android:writePermission="com.example.moviecatalog4.WRITE_DB"/>
     </application>
 
 </manifest>

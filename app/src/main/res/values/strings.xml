@@ -1,12 +1,13 @@
 <resources>
     <string name="app_name">MovieCatalog4</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_home" translatable="false">Home</string>
+    <string name="title_dashboard" translatable="false">Dashboard</string>
+    <string name="title_notifications" translatable="false">Notifications</string>
 
     <string name="add_favorite"> Tambah Favorit</string>
     <string name="delete_fav">Hapus Favorite</string>
-
+    <string name="appwidget_text" translatable="false">Widget Movie Favorit</string>
+    <string name="add_widget" translatable="false">Add widget</string>
     <string name="tab_text_1">Film</string>
     <string name="tab_text_2">Acara Tv</string>
     <string name="tab_text_3">Favorite</string>
@@ -22,4 +23,5 @@
     <string name="change_language_settings">Ubah Pengaturan Bahasa</string>
     <string name="time_out">Waktu koneksi habis</string>
     <string name="no_connection">Anda tidak terhubung jaringan</string>
+    <string name="empty_text">empty</string>
 </resources>

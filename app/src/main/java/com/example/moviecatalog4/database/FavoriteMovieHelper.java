@@ -6,9 +6,11 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.provider.BaseColumns;
 
 import static android.provider.MediaStore.Audio.Playlists.Members._ID;
 import static com.example.moviecatalog4.database.DatabaseContract.FavoriteColumns.JENIS;
+import static com.example.moviecatalog4.database.DatabaseContract.FavoriteColumns.TITLE;
 import static com.example.moviecatalog4.database.DatabaseContract.TABLE_NAME;
 
 public class FavoriteMovieHelper {
@@ -16,7 +18,7 @@ public class FavoriteMovieHelper {
     private SQLiteDatabase database;
     private static FavoriteMovieHelper INSTANCE;
 
-    private FavoriteMovieHelper(Context context) {
+    public FavoriteMovieHelper(Context context) {
         dataBaseHelper = new DatabaseHelper(context);
     }
     public static FavoriteMovieHelper getInstance(Context context) {
@@ -72,6 +74,13 @@ public class FavoriteMovieHelper {
             return 1;
         }
         else return 0;
+    }
+    public int update(String id, ContentValues values) {
+        return database.update(TABLE_NAME, values, BaseColumns._ID + " = ?", new String[]{id});
+    }
+
+    public int delete(String nama) {
+        return database.delete(TABLE_NAME, TITLE + "=" + "'" + nama + "'", null);
     }
 }
 
