@@ -24,7 +24,7 @@
         <receiver
             android:name=".notification.NewToday"
             android:enabled="true"
-            android:exported="true"></receiver>
+            android:exported="true"/>
         <receiver
             android:name=".notification.ReminderEveryday"
             android:enabled="true"

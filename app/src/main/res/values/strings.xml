@@ -20,9 +20,17 @@
     <string name="txt_Rilis">Tanggal Rilis</string>
     <string name="txt_rating">Penilaian</string>
     <string name="txt_sinposis">Sinopsis</string>
-    <string name="change_language_settings">Ubah Pengaturan Bahasa</string>
+    <string name="change_language_settings" translatable="false">Ubah Pengaturan Bahasa</string>
     <string name="time_out">Waktu koneksi habis</string>
     <string name="no_connection">Anda tidak terhubung jaringan</string>
     <string name="empty_text">empty</string>
     <string name="search">Search</string>
+    <string name="title_activity_settings">Pengaturan</string>
+    <string name="Bahasa">Bahasa</string>
+    <string name="select_language">Pilih Bahasa</string>
+    <string name="setting_language">Pengaturan Bahasa</string>
+    <string name="reminder_everyday">"Pengingat "</string>
+    <string name="summary_reminder_everyday">Ingatkan saya pada pukul 7.00 am untuk membuka aplikasi</string>
+    <string name="movie_today">Film Rilis hari ini</string>
+    <string name="summary_movie_today">Ingatkan saya jika ada film baru hari ini</string>
 </resources>
