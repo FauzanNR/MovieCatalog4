@@ -17,7 +17,7 @@
     <string name="txt_Rilis">Date Release</string>
     <string name="txt_rating">Rating</string>
     <string name="txt_sinposis">Synopsis</string>
-    <string name="change_language_settings">Change Language Setting</string>
+    <string name="setting">Change Language Setting</string>
     <string name="time_out">Connection time out</string>
     <string name="no_connection">You are not connected to the network</string>
 

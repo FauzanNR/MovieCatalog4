@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="@string/Bahasa">
+        <Preference
+            android:key="@string/Bahasa"
+            android:summary="@string/select_language"
+            android:title="@string/setting_language" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/title_notifications">
+
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="@string/reminder_everyday"
+            android:summary="@string/summary_reminder_everyday"
+            android:title="@string/reminder_everyday" />
+
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="@string/movie_today"
+            android:summary="@string/summary_movie_today"
+            android:title="@string/movie_today" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
