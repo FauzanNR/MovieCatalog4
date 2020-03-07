@@ -18,8 +18,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.IOException;
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 import cz.msebera.android.httpclient.Header;
@@ -27,11 +25,17 @@ import cz.msebera.android.httpclient.Header;
 
 public class TvViewModel extends ViewModel {
 
-    private String  url = "https://api.themoviedb.org/3/discover/tv?api_key=" + API_KEY + "&language=en-US";
+    private String  url;
     private static final String API_KEY = BuildConfig.API_KEY;
     private MutableLiveData<ArrayList<Movie>> listData = new MutableLiveData<>();
 
-    public void setDataTV(){
+    public void setDataTV(String search){
+        if (search.equals("")) {
+            url =  "https://api.themoviedb.org/3/discover/tv?api_key=" + API_KEY + "&language=en-US";
+        }else{
+            url = "https://api.themoviedb.org/3/search/tv?api_key="+ API_KEY +"&language=en-US&query="+search;
+
+        }
         AsyncHttpClient client = new AsyncHttpClient();
         final ArrayList<Movie> listMovie = new ArrayList<>();
 

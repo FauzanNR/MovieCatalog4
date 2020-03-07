@@ -25,10 +25,16 @@ import cz.msebera.android.httpclient.Header;
 
 public class MovieViewModel extends ViewModel {
     private MutableLiveData<ArrayList<Movie>> listData = new MutableLiveData<>();
-    private String url= "https://api.themoviedb.org/3/discover/movie?api_key=" + apiKey + "&language=en-US";
+    private String url;
     private static final String apiKey = BuildConfig.API_KEY;
 
-    public void setDataMovie(){
+    public void setDataMovie(String search){
+        if (search.equals("")) {
+            url = "https://api.themoviedb.org/3/discover/movie?api_key=" + apiKey + "&language=en-US";
+        }else{
+            url = "https://api.themoviedb.org/3/search/movie?api_key="+ apiKey +"&language=en-US&query="+search;
+
+        }
         AsyncHttpClient client = new AsyncHttpClient();
         final ArrayList<Movie> listMovie = new ArrayList<>();
 

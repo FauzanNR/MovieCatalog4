@@ -24,4 +24,5 @@
     <string name="time_out">Waktu koneksi habis</string>
     <string name="no_connection">Anda tidak terhubung jaringan</string>
     <string name="empty_text">empty</string>
+    <string name="search">Search</string>
 </resources>
