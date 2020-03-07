@@ -109,7 +109,11 @@ public class contentProvider extends android.content.ContentProvider {
         Cursor cursor;
         switch (URI_MATCHER.match(uri)) {
             case MOVIE:
-                cursor = liteDatabase.query(TABLE_NAME, null, null, null, null, null, null);
+                if (selection == null){
+                    cursor = liteDatabase.query(TABLE_NAME, null, null, null, null, null, null);
+                } else {
+                    cursor = liteDatabase.query(TABLE_NAME,null,JENIS+"=?",new String[]{selection},null,null,null);
+                }
                 break;
             case MOVIE_ID:
                 cursor = liteDatabase.query(TABLE_NAME,

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:padding="12dp"
+    android:layout_margin="1dp"
+    android:background="@color/colorPrimaryDark"
+    android:layout_height="wrap_content">
+
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/img_film"
+        android:layout_width="100dp"
+        android:layout_height="150dp"
+        android:background="@color/colorPrimary"
+        app:riv_corner_radius="5dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="10dp"
+        android:paddingLeft="14dp">
+
+        <TextView
+            android:id="@+id/tv_judul"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:text="Title film"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/rating"
+            android:textColor="@android:color/white"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_judul"
+            android:text="@string/rating"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:id="@+id/petik1"
+            android:layout_below="@id/tv_judul"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="8dp"
+            android:layout_toEndOf="@id/rating"
+            android:text=":" />
+
+        <TextView
+            android:id="@+id/rating2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_judul"
+            android:textColor="@android:color/white"
+            android:layout_marginBottom="8dp"
+            android:layout_toEndOf="@id/petik1"
+            android:text="@string/rating" />
+
+
+        <TextView
+            android:id="@+id/release"
+            android:layout_width="wrap_content"
+            android:textColor="@android:color/white"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_below="@+id/rating"
+            android:text="@string/release" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:layout_marginBottom="8dp"
+            android:id="@+id/petik2"
+            android:layout_below="@id/petik1"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_toEndOf="@id/release"
+            android:text=":" />
+
+        <TextView
+            android:id="@+id/release2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:layout_below="@id/rating"
+            android:layout_marginBottom="8dp"
+            android:layout_toEndOf="@id/petik2"
+            android:text="Release" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/more_info"
+            android:textColor="@android:color/white"
+
+            android:layout_below="@id/release" />
+
+
+    </RelativeLayout>
+
+</LinearLayout>

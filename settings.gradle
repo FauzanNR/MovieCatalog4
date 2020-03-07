@@ -1,2 +1,3 @@
 include ':app'
 rootProject.name='MovieCatalog4'
+include ':favapp'

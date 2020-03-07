@@ -82,5 +82,7 @@ public class FavoriteMovieHelper {
     public int delete(String nama) {
         return database.delete(TABLE_NAME, TITLE + "=" + "'" + nama + "'", null);
     }
+
+
 }
 
