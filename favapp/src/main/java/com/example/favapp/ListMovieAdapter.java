@@ -18,18 +18,6 @@ import java.util.ArrayList;
 
 public class ListMovieAdapter extends RecyclerView.Adapter<ListMovieAdapter.ListViewHolder> {
 
-    private OnItemClickCallback onItemClickCallback;
-
-    public void setOnItemClickCallback(OnItemClickCallback onItemClickCallback) {
-        this.onItemClickCallback = onItemClickCallback;
-    }
-    public interface OnItemClickCallback{
-        void onItemClicked(Movie data);
-    }
-
-    public ArrayList<Movie> getListMovie() {
-        return listMovie;
-    }
     public void setListMovie(ArrayList<Movie> listMovie) {
         this.listMovie.clear();
         this.listMovie.addAll(listMovie);
@@ -53,12 +41,7 @@ public class ListMovieAdapter extends RecyclerView.Adapter<ListMovieAdapter.List
     public void onBindViewHolder(@NonNull final ListViewHolder holder, int position) {
 
         holder.bind(listMovie.get(position));
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onItemClickCallback.onItemClicked(listMovie.get(holder.getAdapterPosition()));
-            }
-        });
+
     }
 
     @Override
