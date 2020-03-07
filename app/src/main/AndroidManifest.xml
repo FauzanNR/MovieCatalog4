@@ -2,24 +2,41 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.moviecatalog4">
+
     <uses-permission android:name="android.permission.INTERNET" />
 
-    <permission android:name="com.example.moviecatalog4.READ_DB"
-        android:protectionLevel="normal"/>
-    <permission android:name="com.example.moviecatalog4.WRITE_DB"
-        android:protectionLevel="normal"/>
+    <permission
+        android:name="com.example.moviecatalog4.READ_DB"
+        android:protectionLevel="normal" />
+    <permission
+        android:name="com.example.moviecatalog4.WRITE_DB"
+        android:protectionLevel="normal" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_movie"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true"
         android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".ItemDetailActivity"
+        <receiver
+            android:name=".notification.NewToday"
+            android:enabled="true"
+            android:exported="true"></receiver>
+        <receiver
+            android:name=".notification.ReminderEveryday"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings" />
+        <activity
+            android:name=".ItemDetailActivity"
             android:configChanges="orientation|uiMode|screenSize"
-            tools:ignore="InnerclassSeparator"/>
+            tools:ignore="InnerclassSeparator" />
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name">
@@ -29,6 +46,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <service
             android:name=".stackwidget.StackWidgetService"
             android:enabled="true"
@@ -37,19 +55,21 @@
 
         <receiver android:name=".stackwidget.FavoriteWidgetProvider">
             <intent-filter>
-                <action android:name= "android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
+
             <meta-data
                 android:name="android.appwidget.provider"
                 android:resource="@xml/widget_info" />
         </receiver>
+
         <provider
-            android:authorities="com.example.moviecatalog4"
             android:name=".database.contentProvider"
+            android:authorities="com.example.moviecatalog4"
             android:enabled="true"
             android:exported="true"
             android:readPermission="com.example.moviecatalog4.READ_DB"
-            android:writePermission="com.example.moviecatalog4.WRITE_DB"/>
+            android:writePermission="com.example.moviecatalog4.WRITE_DB" />
     </application>
 
 </manifest>
