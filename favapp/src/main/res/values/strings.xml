@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">FavApp</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="tab_text_1">Movie</string>
+    <string name="tab_text_2">Tv Show</string>
+    <string name="rating">Rating </string>
+    <string name="release">Release</string>
+    <string name="overview">Overview</string>
+    <string name="more_info">More Info</string>
+    <string name="language">Language</string>
+    <string name="title_movie">Movie</string>
+    <string name="title_tv_show">Tv Show</string>
+
+</resources>
