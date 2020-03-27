@@ -18,7 +18,7 @@ import androidx.core.app.NotificationCompat;
 import androidx.core.content.ContextCompat;
 
 import com.example.moviecatalog4.BuildConfig;
-import com.example.moviecatalog4.MainActivity;
+import com.example.moviecatalog4.ItemDetailActivity;
 import com.example.moviecatalog4.Movie;
 import com.example.moviecatalog4.R;
 import com.loopj.android.http.AsyncHttpClient;
@@ -37,16 +37,16 @@ import cz.msebera.android.httpclient.Header;
 
 public class NewToday extends BroadcastReceiver {
 
-    private static int mNotifId = 2000;
-    ArrayList<Movie> mMovieResults = new ArrayList<>();
+    private static int notifid = 1000;
+    ArrayList<Movie> listItem = new ArrayList<>();
 
 
     private void sendNotification(Context context, String title, String mDesc, int id) {
         NotificationManager notificationManager = (NotificationManager) context.getSystemService(
                 Context.NOTIFICATION_SERVICE);
 
-        Intent goIntent = new Intent(context, MainActivity.class);
-        PendingIntent pendingIntent = PendingIntent.getActivity(context, 2000, goIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+        Intent intent = new Intent(context, ItemDetailActivity.class).putExtra("extra_movie", listItem.get(id- notifid));
+        PendingIntent pendingIntent = PendingIntent.getActivity(context, id, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 
         Uri uriTone = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
 
@@ -77,7 +77,7 @@ public class NewToday extends BroadcastReceiver {
 
     private static PendingIntent getPendingIntent(Context context) {
         Intent intent = new Intent(context, NewToday.class);
-        return PendingIntent.getBroadcast(context, mNotifId, intent, PendingIntent.FLAG_CANCEL_CURRENT);
+        return PendingIntent.getBroadcast(context, notifid, intent, PendingIntent.FLAG_CANCEL_CURRENT);
     }
 
     public void setAlarm(Context context) {
@@ -133,13 +133,15 @@ public class NewToday extends BroadcastReceiver {
 
                     for (int i = 0; i < list.length(); i++) {
                         JSONObject movie = list.getJSONObject(i);
-                        Movie item = new Movie();
-                        item.setName(movie.getString("title"));
-                        toString.append(item.getName());
-                        toString.append("\n");
+                        Movie movie1 = new Movie();
+                        movie1.setName(movie.getString("title"));
+                        movie1.setDescription(movie.getString("overview"));
+                        movie1.setDate_rilis(movie.getString("release_date"));
+                        movie1.setRating(String.valueOf(movie.getDouble("vote_average")));
+                        movie1.setPhoto("https://image.tmdb.org/t/p/w500" + movie.getString("poster_path"));
+                        listItem.add(movie1);
+                        sendNotification(context, title, movie1.getName(), notifid +i);
                     }
-                    Log.d("TAG", "onSuccess Today: " + toString.toString());
-                    sendNotification(context, title, toString.toString(), mNotifId);
                 } catch (Exception e) {
                     Log.d("TAG", "exception: " + e.getMessage());
                 }
